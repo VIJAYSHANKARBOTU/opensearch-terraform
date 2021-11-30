@@ -28,7 +28,7 @@ After creating the ec2, apply the below command to test the opensearch cluster.
 ```ssh -i opensearch.pem ec2-user@ec2-65-2-129-103.ap-south-1.compute.amazonaws.com -N -L 9200:vpc-dkes-y5tqz5op74qluchzfzrqkdib5e.ap-south-1.es.amazonaws.com:443```
 
 
-```
+
 Note: 
 
 where ```opensearch.pem``` is my ssh key
@@ -37,12 +37,10 @@ where ```ec2-user@ec2-65-2-129-103.ap-south-1.compute.amazonaws.com``` is my ins
 
 where ```vpc-dkes-y5tqz5op74qluchzfzrqkdib5e.ap-south-1.es.amazonaws.com``` is my vpc endpoint
 
-```
+
 
 
 For the security group, specify two inbound rules:
 
-Type  Protocol  Port  Range Source
-SSH (22)  TCP (6)	22	your-cidr-block
-HTTPS (443)	TCP (6)	443	your-security-group-id
+add 22 and 443 rules
 
