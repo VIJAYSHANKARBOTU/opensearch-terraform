@@ -142,3 +142,34 @@ variable "node_to_node_encryption_enabled" {
   default     = false
   description = "Whether to enable node-to-node encryption"
 }
+
+variable "domain_endpoint_options_enforce_https" {
+  type        = bool
+  default     = true
+  description = "Whether or not to require HTTPS"
+}
+
+variable "domain_endpoint_options_tls_security_policy" {
+  type        = string
+  default     = "Policy-Min-TLS-1-0-2019-07"
+  description = "The name of the TLS security policy that needs to be applied to the HTTPS endpoint"
+}
+
+
+# variable "custom_endpoint_enabled" {
+#   type        = bool
+#   description = "Whether to enable custom endpoint for the Elasticsearch domain."
+#   default     = false
+# }
+
+# variable "custom_endpoint" {
+#   type        = string
+#   description = "Fully qualified domain for custom endpoint."
+#   default     = ""
+# }
+
+# variable "custom_endpoint_certificate_arn" {
+#   type        = string
+#   description = "ACM certificate ARN for custom endpoint."
+#   default     = ""
+# }

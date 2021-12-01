@@ -22,6 +22,14 @@ resource "aws_elasticsearch_domain" "default" {
     kms_key_id = var.encrypt_at_rest_kms_key_id
   }
 
+  domain_endpoint_options {
+    enforce_https       = var.domain_endpoint_options_enforce_https
+    tls_security_policy = var.domain_endpoint_options_tls_security_policy
+    # custom_endpoint_enabled         = var.custom_endpoint_enabled
+    # custom_endpoint                 = var.custom_endpoint_enabled ? var.custom_endpoint : null
+    # custom_endpoint_certificate_arn = var.custom_endpoint_enabled ? var.custom_endpoint_certificate_arn : null
+  }
+
   cluster_config {
     instance_count           = var.instance_count
     instance_type            = var.instance_type
@@ -35,9 +43,10 @@ resource "aws_elasticsearch_domain" "default" {
     }
   }
 
-  # here you will have to change the subnet 
+  # here you will have to change the subnet and security group
   vpc_options {
-    subnet_ids = ["subnet-a41333cc"]
+    subnet_ids         = ["subnet-a41333cc"]
+    security_group_ids = ["sg-0e684d5c8aedc8b44"]
   }
 
 
