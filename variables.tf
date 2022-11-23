@@ -5,7 +5,7 @@ variable "region" {
 
 variable "domain_name" {
   type        = string
-  default     = "dkes"
+  default     = "SPI-DOMAIN"
   description = "name of Elasticsearch Domain"
 }
 
